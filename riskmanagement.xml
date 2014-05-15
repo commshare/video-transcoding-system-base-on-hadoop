@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+	<property>
+		<name>f1</name>
+		<value>1</value>
+	</property>
+	<property>
+		<name>f2</name>
+		<value>1</value>
+	</property>
+
+	<property>
+		<name>f3</name>
+		<value>1</value>
+	</property>
+	
+	<property>	
+		<name>f4</name>
+		<value>1</value>
+	</property>
+
+	<property>
+		<name>alpha1</name>
+		<value>0.4976</value>
+	</property>
+
+	<property>
+		<name>alpha2</name>
+		<value>0.0621</value>
+	</property>
+
+	<property>
+		<name>alpha3</name>
+		<value>0.0621</value>
+	</property>
+	
+	<property>
+		<name>alpha4</name>
+		<value>0.1242</value>
+	</property>
+
+	<property>
+		<name>alpha5</name>
+		<value>0.0497</value>
+	</property>
+
+	<property>
+		<name>alpha6</name>
+		<value>0.0522</value>
+	</property>
+
+	<property>
+		<name>alpha7</name>
+		<value>0.0452</value>
+	</property>
+
+	<property>
+		<name>alpha8</name>
+		<value>0.0522</value>
+	</property>
+
+	<property>
+		<name>alpha9</name>
+		<value>0.0498</value>
+	</property>
+
+	<property>
+		<name>beta1</name>
+		<value>0.6667</value>
+	</property>
+
+	<property>
+		<name>beta2</name>
+		<value>0.3333</value>
+	</property>
+
+	<property>
+		<name>beta3</name>
+		<value>0</value>
+	</property>
+
+	
+	<property>
+		<name>mysql.host.name</name>
+		<value>192.168.163.239</value>
+	</property>
+	<property>
+		<name>mysql.port</name>
+		<value>3306</value>
+	</property>
+	<property>
+		<name>mysql.username</name>
+		<value>hadoop</value>
+	</property>
+	<property>
+		<name>mysql.passwd</name>
+		<value>123qaz</value>
+	</property>
+	<property>
+		<name>mysql.database.name</name>
+		<value>riskmanagement</value>
+	</property>
+	<property>
+		<name>data.type</name>
+		<value>dd/MM/yyyy</value>
+	</property>
+	<property>
+		<name>risk.value.table.name</name>
+		<value>riskvalue</value>
+	</property>
+	<property>
+		<name>area.risk.value.table.name</name>
+		<value>addressriskvalue</value>
+	</property>
+	<property>
+		<name>city.risk.value.table.name</name>
+		<value>city_riskvalue</value>
+	</property>
+	<property>
+		<name>province.risk.value.table.name</name>
+		<value>province_riskvalue</value>
+	</property>
+	<property>
+		<name>address.table.name</name>
+		<value>address</value>
+	</property>
+
+	<property>
+		<name>crane.inspect.report.crane.variety.table.name</name>
+		<value>craneinspectreport_cranevariety</value>
+	</property>
+
+	<property>
+		<name>insert.risk.value.sql</name>
+		<value>insert into ${risk.value.table.name} (reportnumber,riskvalue) values (?,?)</value>
+	</property>
+	<property>
+		<name>update.riskvalue.sql</name>
+		<value>update ${risk.value.table.name} set riskvalue = ? where reportnumber = ?</value>
+	</property>
+	<property>
+		<name>select.risk.value.sql</name>
+		<value>select id from ${risk.value.table.name} where reportnumber = ?</value>
+	</property>
+	
+	<property>
+		<name>insert.address.risk.show.sql</name>
+		<value>insert into ${area.risk.value.table.name} (addressid,riskvalue) values (?,?)</value>
+	</property>
+	<property>
+		<name>update.address.risk.show.sql</name>
+		<value>update ${area.risk.value.table.name} set riskvalue = ? where addressid = ?</value>
+	</property>
+	<property>
+		<name>select.address.risk.show.sql</name>
+		<value>select id from ${area.risk.value.table.name} where addressid = ?</value>
+	</property>
+
+	<property>
+		<name>insert.city.risk.show.sql</name>
+		<value>insert into ${city.risk.value.table.name} (province,riskvalue) values (?,?)</value>
+	</property>
+	<property>
+		<name>update.city.risk.show.sql</name>
+		<value>update ${city.risk.value.table.name} set riskvalue = ? where province = ? and city = ?</value>
+	</property>
+	<property>
+		<name>select.city.risk.show.sql</name>
+		<value>select id from ${city.risk.value.table.name} where province = ? and city = ?"</value>
+	</property>
+	<property>
+		<name>insert.province.risk.show.sql</name>
+		<value>insert into ${province.risk.value.table.name}  (province,riskvalue) values (?,?)</value>
+	</property>
+	<property>
+		<name>update.province.risk.show.sql</name>
+		<value>update ${province.risk.value.table.name} set riskvalue = ? where province = ?</value>
+	</property>
+	<property>
+		<name>select.province.risk.show.sql</name>
+		<value>select id from ${province.risk.value.table.name} where province = ?</value>
+	</property>
+
+	<property>
+		<name>select.id.sql</name>
+		<value>select id from ${address.table.name} where province = ? and city = ? and area = ?</value>
+	</property>
+	<property>
+		<name>select.crane.id.sql</name>
+		<value>select craneVarietyId from ${crane.inspect.report.crane.variety.table.name} where equipmentVariety = ?</value>
+	</property>
+
+	<property>
+		<name>mongodb.database.name</name>
+		<value>riskmanagement</value>
+	</property>
+	<property>
+		<name>mongodb.risk.management.collection.name</name>
+		<value>riskmanagement</value>
+	</property>
+	<property>
+		<name>mongodb.meanandmax.value.collection.name</name>
+		<value>meanAndMaxValue</value>
+	</property>
+
+	<property>
+		<name>mongodb.hostname</name>
+		<value>192.168.163.238</value>
+	</property>
+	<property>
+		<name>mongodb.port</name>
+		<value>27017</value>
+		<final>true</final>
+	</property>
+	<property>
+		<name>mongodb.user</name>
+		<value>admin</value>
+	</property>
+	<property>
+		<name>mongodb.passwd</name>
+		<value>admin</value>
+	</property>
+
+	<property>
+		<name>meanandmaxvalue.cached.file</name>
+		<value>meanandmaxvaluedir/meanandmaxvalue</value>
+	</property>
+</configuration>
